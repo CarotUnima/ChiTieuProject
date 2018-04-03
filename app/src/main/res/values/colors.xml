@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0cb322</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <!-- Screens background -->
+    <color name="bg_screen1">#b12515</color>
+    <color name="bg_screen2">#FFBB00</color>
+    <color name="bg_screen3">#74a443</color>
+    <color name="trang">#f5f4f4</color>
+    <color name="color_slide1">#3f8c3b</color>
+    <color name="xanhdam">#16c94e</color>
+    <color name="backgrouplogin">#e9e8e8</color>
+    <color name="xanhbien">#1a91bc</color>
+    <color name="cam">#dc5101</color>
+    <!-- dots active colors -->
+    <color name="dot_active">#000000</color>
+    <color name="dot_active1">#5c5b5b</color>
+    <color name="xanhbien1">#00fff2</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_inactive">#cccccc</color>
+    <color name="maudo">#f90313</color>
+    <color name="xanhmain">#0cb322</color>
+    <color name="backgroupwhite">#fcfbfb</color>
+    <color name="backed">#0b0b0b</color>
+    <color name="den">#030303</color>
+    <color name="xam">#545252</color>
+    <color name="lightorange">#fdf2df</color>
+    <color name="startblue">#09c6df</color>
+    <color name="endblue">#0bcce6</color>
+</resources>

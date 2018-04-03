@@ -1,0 +1,115 @@
+<resources>
+
+    <string-array name="list_flag">
+        <item>china_flag</item>
+        <item>flagvn</item>
+        <item>japan_flag</item>
+        <item>korean_flag</item>
+        <item>nga_flag</item>
+        <item>thailan_flag</item>
+        <item>uk_flag</item>
+        <item>usa_flag</item>
+    </string-array>
+    <string-array name="list_flag_name">
+        <item>¥</item>
+        <item>₫</item>
+        <item>¥</item>
+        <item>₩</item>
+        <item>руб</item>
+        <item>฿</item>
+        <item>£</item>
+        <item>$</item>
+    </string-array>
+    <string-array name="list_hinh_login">
+        <item>hinh1</item>
+        <item>hinh2</item>
+        <item>hinh3</item>
+        <item>hinh4</item>
+        <item>hinh5</item>
+        <item>hinh6</item>
+        <item>hinh7</item>
+        <item>hinh8</item>
+        <item>hinh9</item>
+        <item>hinh10</item>
+        <item>hinh11</item>
+        <item>hinh12</item>
+        <item>hinh13</item>
+        <item>hinh14</item>
+        <item>hinh15</item>
+        <item>hinh16</item>
+        <item>hinh17</item>
+        <item>hinh18</item>
+        <item>hinh19</item>
+        <item>hinh20</item>
+    </string-array>
+    <string-array name="name_img">
+        <item>Cô Bé</item>
+        <item>Chàng Trai Trẻ</item>
+        <item>Chuẩn Men</item>
+        <item>Gymer</item>
+        <item>Cô Bé Dễ Thương</item>
+        <item>Cô Bé Điệu</item>
+        <item>Học Sinh</item>
+        <item>Ai Cập</item>
+        <item>Giáo Viên</item>
+        <item>IT</item>
+        <item>Giảng Viên</item>
+        <item>Sửa Nước</item>
+        <item>Sửa Hầm</item>
+        <item>Bảo Vệ</item>
+        <item>Giáo Viên Đẹp</item>
+        <item>NuNu</item>
+        <item>Giáo Sư</item>
+        <item>Éo Biết</item>
+        <item>Style new</item>
+        <item>Ô Đẹp</item>
+    </string-array>
+    <string-array name="thang">
+        <item>Không có tháng</item>
+        <item>Tháng Một</item>
+        <item>Tháng Hai</item>
+        <item>Tháng Ba</item>
+        <item>Tháng Tư</item>
+        <item>Tháng Năm</item>
+        <item>Tháng Sáu</item>
+        <item>Tháng Bảy</item>
+        <item>Tháng Tám</item>
+        <item>Tháng Chín</item>
+        <item>Tháng Mười</item>
+        <item>Tháng Mười Một</item>
+        <item>Tháng Một Hai</item>
+    </string-array>
+    <string name="app_name">QLChiTieu</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="start">Start</string>
+    <string name="title_slide1">Connect the charger</string>
+    <string name="string_slide1">Money Lover</string>
+
+    <string name="desc_slide1">Lên kế hoạch tài chính thông minh và từng bước tiết kiệm để hiện thực hóa ước mơ.</string>
+    <string name="string_desc_slide1">Mẹo đầu tiên: đăng nhập để truy cập vào dữ liệu của bạn trên tất cả các thiết bị.</string>
+
+    <string name="title_slide2">Kiểm soát từng khoản thu chi với hệ thống báo cáo chi tiết.</string>
+
+    <string name="desc_slide2">It will  keep you updated on battery charging status through notification and home screen widget</string>
+    <string name="title_slide3">Alert on 100%</string>
+    <string name="title_slide4">Chán nản sẽ có những trò chơi giải trí cùng app...</string>
+    <string name="title_slide5">Nghe nhạc mp3 cực đỉnh cùng app và được thiết kế giao diện cực đẹp.</string>
+    <string name="desc_slide3">It will alert you when battery reaches 100%</string>
+
+    <string name="help_slide1">It will alert you when battery reaches 100%</string>
+    <string name="suport">Chúng tôi sẽ không đăng thông tin mà không có sự cho phép của bạn.</string>
+    <string name="chitieutk">Chi tiêu tiết kiệm gia đình hạnh phúc...</string>
+    <string name="tiltelogin">Phần mền sẽ giúp bạn quản lý tài khoản hoặc tiền một cách chuẩn mực và an toàn nhất.</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="cham">Chạm để xem báo cáo đầu đủ</string>
+    <string name="addgd">Thêm Giao Dịch</string>
+    <string name="dangnhap">Giúp đỡ nhau phát triển, bảo mật an toàn.Toàn nhân viên sẽ hỗ trợ!</string>
+    <string name="dangnhap1">Phục vụ nhiệt tình, phục vụ hăng say, phục vụ không nản chí.</string>
+    <string name="title_activity_manhinhchinh">manhinhchinh</string>
+</resources>

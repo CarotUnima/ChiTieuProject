@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundicon"
+    android:orientation="vertical"
+    android:weightSum="4"
+    >
+    <LinearLayout
+        android:layout_weight="0.4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+        <RelativeLayout
+            android:layout_weight="0.25"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/btnquayve"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/arrrow2"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1.5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sửa Chi Tiêu"
+                android:textColor="#f2f0f0"
+                android:textSize="20dp"
+                android:textStyle="normal"
+
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="0.2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"></LinearLayout>
+    <LinearLayout
+        android:layout_weight="2.1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:weightSum="2"
+        >
+        <RelativeLayout
+            android:layout_weight="0.7"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            >
+            <android.support.design.widget.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fafafa"
+                android:textColorHint="#fafafa"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:textColor="#fafafa"
+                    android:textColorHint="#fafafa"
+                    android:id="@+id/edittenct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tên Chi Tiêu"
+                    android:inputType="textEmailAddress"
+                    android:drawableLeft="@drawable/icontenchitieu"
+                    />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="0.7"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginTop="10dp"
+            >
+            <android.support.design.widget.TextInputLayout
+                android:textColor="#fafafa"
+                android:textColorHint="#fafafa"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#ce12ae"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:textColor="#fafafa"
+                    android:textColorHint="#fafafa"
+                    android:id="@+id/edittienct"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Tiền Chi Tiêu"
+                    android:inputType="text"
+                    android:drawableLeft="@drawable/ic_attach_money_black_24dp"
+
+                    />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="0.7"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginTop="10dp"
+            >
+            <android.support.design.widget.TextInputLayout
+                android:textColor="#fafafa"
+                android:textColorHint="#fafafa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:textColor="#fafafa"
+                    android:textColorHint="#fafafa"
+                    android:id="@+id/editluuy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Lưu Ý"
+                    android:inputType="textEmailAddress"
+                    android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+                    />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_weight="0.6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:gravity="center"
+        >
+        <Button
+            android:textStyle="normal"
+            android:id="@+id/btnsua"
+            android:textSize="18dp"
+            android:text="Sửa Chi Tiêu"
+            android:layout_width="400px"
+            android:layout_height="50dp"
+            android:textColor="#f9f8f8"
+            android:background="@drawable/drawable_button_dangnhap"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>
