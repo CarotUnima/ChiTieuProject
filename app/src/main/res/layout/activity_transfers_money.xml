@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sửa Chi Tiêu"
+                android:text="Chuyển Tiền"
                 android:textColor="#f2f0f0"
                 android:textSize="20dp"
                 android:textStyle="normal"
@@ -77,10 +77,10 @@
                 <android.support.design.widget.TextInputEditText
                     android:textColor="#fafafa"
                     android:textColorHint="#fafafa"
-                    android:id="@+id/edittenct"
+                    android:id="@+id/editemailfisrt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Tên Chi Tiêu"
+                    android:hint="Email"
                     android:inputType="textEmailAddress"
                     android:drawableLeft="@drawable/icontenchitieu"
                     />
@@ -107,10 +107,10 @@
                 <android.support.design.widget.TextInputEditText
                     android:textColor="#fafafa"
                     android:textColorHint="#fafafa"
-                    android:id="@+id/edittienct"
+                    android:id="@+id/editemailin"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="Tiền Chi Tiêu"
+                    android:hint="Email Nhận Tiền"
                     android:inputType="text"
                     android:drawableLeft="@drawable/ic_attach_money_black_24dp"
 
@@ -136,10 +136,10 @@
                 <android.support.design.widget.TextInputEditText
                     android:textColor="#fafafa"
                     android:textColorHint="#fafafa"
-                    android:id="@+id/editluuy"
+                    android:id="@+id/edittien"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Lưu Ý"
+                    android:hint="Số Tiền"
                     android:inputType="textEmailAddress"
                     android:drawableLeft="@drawable/ic_person_outline_black_24dp"
                     />
@@ -156,19 +156,9 @@
         >
         <Button
             android:textStyle="normal"
-            android:id="@+id/btnsua"
+            android:id="@+id/btnsend"
             android:textSize="18dp"
-            android:text="Sửa Chi Tiêu"
-            android:layout_width="300px"
-            android:layout_height="50dp"
-            android:textColor="#f9f8f8"
-            android:background="@drawable/drawable_button_dangnhap"
-            />
-        <Button
-            android:textStyle="normal"
-            android:id="@+id/btnxoa"
-            android:textSize="18dp"
-            android:text="Xóa Chi Tiêu"
+            android:text="Chuyển Tiền"
             android:layout_width="300px"
             android:layout_height="50dp"
             android:textColor="#f9f8f8"

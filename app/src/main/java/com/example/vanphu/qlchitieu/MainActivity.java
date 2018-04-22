@@ -36,16 +36,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        hidden tilte
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
+//        declare
         init();
-        xuathien();
+//        show data
+        show();
+//        get code money
         txtmatien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivityForResult(new Intent(MainActivity.this,selectmoney.class),100);
             }
         });
+//        add data
         btnhoanthanh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,10 +78,11 @@ public class MainActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+//                        if success then done
                         if(response.trim().equals("Thành Công")){
                             Toast.makeText(MainActivity.this,"Thêm Thành Công",Toast.LENGTH_LONG).show();
                             Intent intent=new Intent(MainActivity.this,manhinhchinh.class);
-                            intent.putExtra("emaillogin",txtemail.getText().toString().trim());
+                            intent.putExtra("email",txtemail.getText().toString().trim());
                             startActivity(intent);
                         }else {
                             Toast.makeText(MainActivity.this,"Lỗi Thêm",Toast.LENGTH_LONG).show();
@@ -93,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> params=new HashMap<>();
+//                post data
                 params.put("email",txtemail.getText().toString().trim());
                 params.put("matien",txtmatien.getText().toString().trim());
                 params.put("tienvao",edittienvao.getText().toString().trim());
@@ -102,13 +109,16 @@ public class MainActivity extends AppCompatActivity {
         };
         requestQueue.add(stringRequest);
     }
-    public void xuathien(){
+    public void show(){
+//        getdata
         Intent intent=getIntent();
-        String[] mangten=getResources().getStringArray(R.array.list_hinh_login);
-        arrayhinhanh=new ArrayList<>(Arrays.asList(mangten));
         idhinh=Integer.parseInt(intent.getStringExtra("idhinh"));
         String name=intent.getStringExtra("name");
         String email=intent.getStringExtra("email");
+//        declare string list
+        String[] mangten=getResources().getStringArray(R.array.list_hinh_login);
+        arrayhinhanh=new ArrayList<>(Arrays.asList(mangten));
+//        cover idhinh
         final int idHinh=getResources().getIdentifier(arrayhinhanh.get(idhinh),"drawable",getPackageName());
         imagedk.setImageResource(idHinh);
         txtname.setText(name);

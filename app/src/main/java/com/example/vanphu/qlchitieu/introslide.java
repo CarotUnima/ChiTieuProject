@@ -26,9 +26,11 @@ public class introslide extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        hidden tilte main
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_introslide);
-        anhxa();
+        init();
+//        next page login
         btnda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,6 +38,7 @@ public class introslide extends Activity {
                 startActivity(dn);
             }
         });
+//        next page registered
         btnlandau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,11 +46,12 @@ public class introslide extends Activity {
                 startActivity(dn);
             }
         });
+//        declare item
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
         btnSkip = (Button) findViewById(R.id.btn_skip);
         btnNext = (Button) findViewById(R.id.btn_next);
-
+//        list layout slides
         layouts = new int[]{
                 R.layout.slide1,
                 R.layout.slide2,
@@ -61,7 +65,7 @@ public class introslide extends Activity {
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
     }
-    public void anhxa(){
+    public void init(){
         btnda=(Button) findViewById(R.id.btnda);
         btnlandau=(Button) findViewById(R.id.btnlandau);
     }

@@ -44,10 +44,12 @@ public class login extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_login);
         init();
+//        declare sharedPreferences
         sharedPreferences =getSharedPreferences("datalogin",MODE_PRIVATE);
         editusername.setText(sharedPreferences.getString("taikhoan",""));
         editpassword.setText(sharedPreferences.getString("matkhau",""));
         checkbox.setChecked(sharedPreferences.getBoolean("checked",false));
+//        declare volley
         requestQueue= Volley.newRequestQueue(this);
         txtdk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +60,7 @@ public class login extends AppCompatActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                declare dialog
                 final Dialog dialog=new Dialog(login.this);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.dialog_cho);
@@ -67,12 +70,13 @@ public class login extends AppCompatActivity {
                     public void onResponse(String response) {
                         try{
                             JSONObject jsonObject = new JSONObject(response);
+//                            if login success
                             if(jsonObject.names().get(0).equals("success")){
                                 Toast.makeText(login.this,"Đăng Nhập Thành Công",Toast.LENGTH_LONG).show();
                                 Intent intent=new Intent(login.this,manhinhchinh.class);
-                                intent.putExtra("emaillogin",editusername.getText().toString().trim());
+                                intent.putExtra("email",editusername.getText().toString().trim());
                                 startActivity(intent);
-
+//                                save shared
                                 if(checkbox.isChecked()){
                                     SharedPreferences.Editor editor=sharedPreferences.edit();
                                     editor.putString("taikhoan",editusername.getText().toString().trim());
@@ -87,13 +91,16 @@ public class login extends AppCompatActivity {
                                     editor.commit();
                                 }
                             }else {
+//                                close dialog
                                 dialog.dismiss();
-                                Toast.makeText(getApplicationContext(), "Đăng Nhập Không Thành Công", Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(login.this,forgetpassword.class);
+                                startActivity(intent);
                             }
 
                         } catch (JSONException e) {
                             dialog.dismiss();
-                           Toast.makeText(login.this,"Tài Khoản Đăng Nhập Không Thành Công",Toast.LENGTH_LONG).show();
+                            Intent intent=new Intent(login.this,forgetpassword.class);
+                            startActivity(intent);
                         }
                     }
                 }, new Response.ErrorListener() {
@@ -101,11 +108,14 @@ public class login extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         dialog.dismiss();
                         Toast.makeText(getApplicationContext(), "Error"+error , Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(login.this,Error_layout.class);
+                        startActivity(intent);
                     }
                 }){
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         HashMap<String,String> hashMap = new HashMap<String, String>();
+//                        post item data
                         hashMap.put("email",editusername.getText().toString());
                         hashMap.put("password",editpassword.getText().toString());
                         return hashMap;

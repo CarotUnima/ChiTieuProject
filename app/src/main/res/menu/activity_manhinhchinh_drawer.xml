@@ -5,17 +5,17 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_thongke"
+            android:icon="@drawable/icon_thongke"
+            android:title="Thống Kê" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/changermoney"
+            android:icon="@drawable/ic_changer"
+            android:title="Chỉnh Sửa Tiền Vào" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/chuyentien"
+            android:icon="@drawable/ic_chuyentien"
+            android:title="Chuyển Tiền" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"

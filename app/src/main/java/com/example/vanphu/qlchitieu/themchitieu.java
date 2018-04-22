@@ -1,12 +1,16 @@
 package com.example.vanphu.qlchitieu;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -27,6 +31,7 @@ public class themchitieu extends AppCompatActivity {
     TextInputEditText edittenct,edittienct,editluuy;
     Button btnthem;
     int idhinh=0;
+    String tenhinhanh="";
     String email="";
     ArrayList<String> arrayList;
     String url="https://vanphudhsp2015.000webhostapp.com/insertchitieu.php";
@@ -38,19 +43,20 @@ public class themchitieu extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_themchitieu);
         init();
-        String[] mangten=getResources().getStringArray(R.array.list_hinh_login);
+        String[] mangten=getResources().getStringArray(R.array.list_hinh_chitieu);
         arrayList=new ArrayList<>(Arrays.asList(mangten));
         Intent intent=getIntent();
         email=intent.getStringExtra("email");
         imgnhom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivityForResult(new Intent(themchitieu.this,selectionimage.class),100);
+                startActivityForResult(new Intent(themchitieu.this,selectimagechitieu.class),100);
             }
         });
         btnthem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dialogxoa("Đang Thêm");
                 if(edittenct.getText().toString().equals("") && edittienct.getText().toString().trim().equals("")){
                     Toast.makeText(themchitieu.this,"Điền Đầy Đủ Thông Tin",Toast.LENGTH_LONG).show();
                 }else{
@@ -79,6 +85,8 @@ public class themchitieu extends AppCompatActivity {
             idhinh=Integer.parseInt(data.getStringExtra("idhinh"));
             final int idHinh=getResources().getIdentifier(arrayList.get(idhinh),"drawable",getPackageName());
             imgnhom.setImageResource(idHinh);
+            tenhinhanh=data.getStringExtra("tenchitieu");
+            edittenct.setText(tenhinhanh);
         }
     }
     private void ThemSinhVien(String url){
@@ -89,9 +97,14 @@ public class themchitieu extends AppCompatActivity {
                     public void onResponse(String response) {
                         if(response.trim().equals("Thành Công")){
                             Toast.makeText(themchitieu.this,"Thêm Thành Công",Toast.LENGTH_LONG).show();
-                            Intent intent=new Intent(themchitieu.this,manhinhchinh.class);
-                            intent.putExtra("emailthem",email);
-                            startActivity(intent);
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Intent intent=new Intent(themchitieu.this,manhinhchinh.class);
+                                    intent.putExtra("email",email);
+                                    startActivity(intent);
+                                }
+                            }, 3500);
                         }else {
                             Toast.makeText(themchitieu.this,"Lỗi Thêm",Toast.LENGTH_LONG).show();
                         }
@@ -115,6 +128,14 @@ public class themchitieu extends AppCompatActivity {
             }
         };
         requestQueue.add(stringRequest);
+    }
+    public void dialogxoa(String str){
+        final Dialog dialog=new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_cho);
+        TextView txttext=(TextView) dialog.findViewById(R.id.txttext);
+        txttext.setText(str);
+        dialog.show();
     }
     public void init(){
         btnquayve=(Button) findViewById(R.id.btnquayve);

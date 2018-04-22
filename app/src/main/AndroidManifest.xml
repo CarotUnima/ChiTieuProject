@@ -30,7 +30,13 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".themchitieu" />
         <activity android:name=".suachitieu" />
-        <activity android:name=".Error_layout"></activity>
+        <activity android:name=".Error_layout" />
+        <activity android:name=".thongke" />
+        <activity android:name=".selectimagechitieu" />
+        <activity android:name=".forgetpassword" />
+        <activity android:name=".changerpassword" />
+        <activity android:name=".changermoney" />
+        <activity android:name=".transfers_money"></activity>
     </application>
 
 </manifest>

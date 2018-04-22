@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sửa Chi Tiêu"
+                android:text="Thay Đổi Tiền Vào"
                 android:textColor="#f2f0f0"
                 android:textSize="20dp"
                 android:textStyle="normal"
@@ -77,76 +77,31 @@
                 <android.support.design.widget.TextInputEditText
                     android:textColor="#fafafa"
                     android:textColorHint="#fafafa"
-                    android:id="@+id/edittenct"
+                    android:id="@+id/edittienvao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Tên Chi Tiêu"
+                    android:hint="Tiền Vào"
                     android:inputType="textEmailAddress"
                     android:drawableLeft="@drawable/icontenchitieu"
                     />
             </android.support.design.widget.TextInputLayout>
         </RelativeLayout>
         <RelativeLayout
-            android:layout_weight="0.7"
+            android:layout_weight="0.6"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:gravity="center"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:layout_marginTop="10dp"
             >
-            <android.support.design.widget.TextInputLayout
-                android:textColor="#fafafa"
-                android:textColorHint="#fafafa"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="#ce12ae"
-                >
-
-                <android.support.design.widget.TextInputEditText
-                    android:textColor="#fafafa"
-                    android:textColorHint="#fafafa"
-                    android:id="@+id/edittienct"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Tiền Chi Tiêu"
-                    android:inputType="text"
-                    android:drawableLeft="@drawable/ic_attach_money_black_24dp"
-
-                    />
-            </android.support.design.widget.TextInputLayout>
+            <ImageView
+                android:id="@+id/imgnhom"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/question"
+                />
         </RelativeLayout>
-        <RelativeLayout
-            android:layout_weight="0.7"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:layout_marginTop="10dp"
-            >
-            <android.support.design.widget.TextInputLayout
-                android:textColor="#fafafa"
-                android:textColorHint="#fafafa"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
 
-                <android.support.design.widget.TextInputEditText
-                    android:textColor="#fafafa"
-                    android:textColorHint="#fafafa"
-                    android:id="@+id/editluuy"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Lưu Ý"
-                    android:inputType="textEmailAddress"
-                    android:drawableLeft="@drawable/ic_person_outline_black_24dp"
-                    />
-            </android.support.design.widget.TextInputLayout>
-        </RelativeLayout>
     </LinearLayout>
-    <LinearLayout
+    <RelativeLayout
         android:layout_weight="0.6"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -156,25 +111,15 @@
         >
         <Button
             android:textStyle="normal"
-            android:id="@+id/btnsua"
+            android:id="@+id/btnchanger"
             android:textSize="18dp"
-            android:text="Sửa Chi Tiêu"
-            android:layout_width="300px"
-            android:layout_height="50dp"
-            android:textColor="#f9f8f8"
-            android:background="@drawable/drawable_button_dangnhap"
-            />
-        <Button
-            android:textStyle="normal"
-            android:id="@+id/btnxoa"
-            android:textSize="18dp"
-            android:text="Xóa Chi Tiêu"
-            android:layout_width="300px"
+            android:text="Thay Đổi"
+            android:layout_width="400px"
             android:layout_height="50dp"
             android:textColor="#f9f8f8"
             android:background="@drawable/drawable_button_dangnhap"
             />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

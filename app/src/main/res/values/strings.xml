@@ -20,6 +20,58 @@
         <item>£</item>
         <item>$</item>
     </string-array>
+    <string-array name="list_hinh_chitieu">
+        <item>hinhct1</item>
+        <item>hinhct2</item>
+        <item>hinhct3</item>
+        <item>hinhct4</item>
+        <item>hinhct5</item>
+        <item>hinhct6</item>
+        <item>hinhct7</item>
+        <item>hinhct8</item>
+        <item>hinhct9</item>
+        <item>hinhct10</item>
+        <item>hinhct11</item>
+        <item>hinhct12</item>
+        <item>hinhct13</item>
+        <item>hinhct14</item>
+        <item>hinhct15</item>
+        <item>hinhct16</item>
+        <item>hinhct17</item>
+        <item>hinhct18</item>
+        <item>hinhct19</item>
+        <item>hinhct20</item>
+        <item>hinhct21</item>
+        <item>hinhct22</item>
+        <item>hinhct23</item>
+        <item>hinhct24</item>
+    </string-array>
+    <string-array name="list_hinh_chitieu_name">
+        <item>Sữa Táo</item>
+        <item>Bánh</item>
+        <item>Báo</item>
+        <item>Bia</item>
+        <item>Cafe</item>
+        <item>Tàu Hỏa</item>
+        <item>Từ Thiện</item>
+        <item>Nghe Nhạc</item>
+        <item>Mỳ Quảng</item>
+        <item>Nhà Hàng</item>
+        <item>Bắp Rang</item>
+        <item>Nước Mía</item>
+        <item>Quần Áo</item>
+        <item>Chơi Game</item>
+        <item>Chạy Bộ</item>
+        <item>Rượu</item>
+        <item>Sữa</item>
+        <item>Khám Răng</item>
+        <item>Tạp Hóa</item>
+        <item>Ăn</item>
+        <item>Lúa Mạch</item>
+        <item>Thuốc</item>
+        <item>Học Phí</item>
+        <item>Xăng</item>
+    </string-array>
     <string-array name="list_hinh_login">
         <item>hinh1</item>
         <item>hinh2</item>
@@ -112,4 +164,5 @@
     <string name="dangnhap">Giúp đỡ nhau phát triển, bảo mật an toàn.Toàn nhân viên sẽ hỗ trợ!</string>
     <string name="dangnhap1">Phục vụ nhiệt tình, phục vụ hăng say, phục vụ không nản chí.</string>
     <string name="title_activity_manhinhchinh">manhinhchinh</string>
+    <string name="forget">Mật khẩu không đúng hoặc bạn quên mật khẩu</string>
 </resources>

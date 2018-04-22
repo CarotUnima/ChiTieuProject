@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:text="      Đã Sử Dụng MONEY LOVER      "
                 android:textColor="@color/trang"
-                android:textSize="15sp"
+                android:textSize="14sp"
 
                 />
         </RelativeLayout>
@@ -54,8 +54,7 @@
                 android:layout_height="wrap_content"
                 android:text="Lần Đầu Sử Dụng MONEY LOVER"
                 android:textColor="@color/color_slide1"
-                android:textSize="15sp"
-
+                android:textSize="14sp"
                 />
         </RelativeLayout>
     </LinearLayout>

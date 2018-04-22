@@ -1,5 +1,6 @@
 package com.example.vanphu.qlchitieu;
 
+
 import android.animation.TimeAnimator;
 import android.app.Dialog;
 import android.content.Intent;
@@ -44,7 +45,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
 public class manhinhchinh extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     TextView txttienvao,txtemail,txtname,txttienngay,txtienra,txttongtien,txtngay,txtthu,txtthang,txtnam;
@@ -83,37 +83,51 @@ public class manhinhchinh extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+//        declare item on sidebar
         View v=navigationView.getHeaderView(0);
         txtemail=(TextView) v.findViewById(R.id.txtemail);
         txtname=(TextView) v.findViewById(R.id.txtname);
         imageView=(ImageView) v.findViewById(R.id.imageView);
         final Intent intent=getIntent();
-        String noidung=intent.getStringExtra("emaillogin");
-        String noidung1=intent.getStringExtra("emailintro");
-        String noidung2=intent.getStringExtra("emaillogin");
-        String noidung3=intent.getStringExtra("emailthem");
-        String noidung4=intent.getStringExtra("emailsua");
-        if(noidung!=null){
-            email=noidung;
-        }else if(noidung1!=null){
-            email=noidung1;
-        }else if(noidung2!=null){
-            email=noidung2;
-        } else if (noidung3!=null) {
-            email=noidung3;
-        } else if(noidung4!=null){
-            email=noidung4;
-        }
-        else {
-            email = "vanphu123";
+//        String noidung=intent.getStringExtra("emaillogin");
+//        String noidung1=intent.getStringExtra("email");
+//        String noidung2=intent.getStringExtra("emaillogin");
+//        String noidung3=intent.getStringExtra("emailthem");
+//        String noidung4=intent.getStringExtra("emailsua");
+//
+//        if(noidung!=null){
+//            email=noidung;
+//        }else if(noidung1!=null){
+//            email=noidung1;
+//        }else if(noidung2!=null){
+//            email=noidung2;
+//        } else if (noidung3!=null) {
+//            email=noidung3;
+//        } else if(noidung4!=null){
+//            email=noidung4;
+//        }
+//        else {
+//            email = "vanphu123";
+//        }
+        String content=intent.getStringExtra("email");
+        if(content!=null){
+            email=content;
+        }else{
+            email="vanphu123@gmail.com";
         }
         init();
         try{
             ReadJson(url+""+email);
-            ReadJson1(url1+""+email);
-            ReadJsonchitieu(url2+""+email);
-            ReadJsonchitieutong(urlsum+""+email);
-            ReadJsonngaythang(urlngay+""+email);
+            dialogxoa("Đang tải dữ liệu");
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    ReadJson1(url1+""+email);
+                    ReadJsonchitieu(url2+""+email);
+                    ReadJsonchitieutong(urlsum+""+email);
+                    ReadJsonngaythang(urlngay+""+email);
+                }
+            }, 2500);
         }catch (Exception e){
             Toast.makeText(manhinhchinh.this,"Lỗi"+e,Toast.LENGTH_LONG).show();
         }
@@ -124,16 +138,6 @@ public class manhinhchinh extends AppCompatActivity
                 Intent intent=new Intent(manhinhchinh.this,themchitieu.class);
                 intent.putExtra("email",email);
                 startActivity(intent);
-            }
-        });
-        listct.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                chitieu ct=arrayList.get(i);
-                Deletect(ct.getId());
-                ReadJsonchitieu(url2);
-                Toast.makeText(manhinhchinh.this,"Xóa Thành Công",Toast.LENGTH_LONG).show();
-                return false;
             }
         });
         listct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -148,37 +152,6 @@ public class manhinhchinh extends AppCompatActivity
                 startActivity(intent);
             }
         });
-    }
-    public void Deletect(final int id){
-        RequestQueue requestQueue=Volley.newRequestQueue(this);
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, urldelte,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        if(response.trim().equals("Thành Công")){
-                            Toast.makeText(manhinhchinh.this,"Xóa Thành Công",Toast.LENGTH_LONG).show();
-                            ReadJson(url);
-                        }else {
-                            Toast.makeText(manhinhchinh.this,"Lỗi",Toast.LENGTH_LONG).show();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-//                Toast.makeText(manhinhchinh.this,"Lỗi"+error,Toast.LENGTH_LONG).show();
-                error();
-            }
-        }
-
-        ){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params=new HashMap<>();
-                params.put("id",String.valueOf(id));
-                return params;
-            }
-        };
-        requestQueue.add(stringRequest);
     }
     public void ReadJson1(String url){
         RequestQueue requestQueue= Volley.newRequestQueue(this);
@@ -328,7 +301,7 @@ public class manhinhchinh extends AppCompatActivity
                         for(int i=0;i<response.length();i++){
                             try{
                                 JSONObject object=response.getJSONObject(i);
-                                String[] mangten=getResources().getStringArray(R.array.list_hinh_login);
+                                String[] mangten=getResources().getStringArray(R.array.list_hinh_chitieu);
                                 arrayhinhanh=new ArrayList<>(Arrays.asList(mangten));
                                 final int idHinh=getResources().getIdentifier(arrayhinhanh.get(object.getInt("idhinh")),"drawable",getPackageName());
                                 arrayList.add(new chitieu(object.getInt("id"),object.getString("tenchitieu")
@@ -393,6 +366,20 @@ public class manhinhchinh extends AppCompatActivity
     public void error(){
         Intent intent=new Intent(manhinhchinh.this,Error_layout.class);
         startActivity(intent);
+    }
+    public void dialogxoa(String str){
+        final Dialog dialog=new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_cho);
+        TextView txttext=(TextView) dialog.findViewById(R.id.txttext);
+        txttext.setText(str);
+        dialog.show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dialog.dismiss();
+            }
+        }, 4000);
     }
     public void init(){
         btnadd=(ImageView) findViewById(R.id.btnadd);
@@ -459,12 +446,20 @@ public class manhinhchinh extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_thongke) {
+            Intent intent=new Intent(manhinhchinh.this,thongke.class);
+            intent.putExtra("email",email);
+            intent.putExtra("matien",matien);
+            startActivity(intent);
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.changermoney) {
+            Intent intent=new Intent(manhinhchinh.this,changermoney.class);
+            intent.putExtra("email",email);
+            startActivity(intent);
+        } else if (id == R.id.chuyentien) {
+            Intent intent=new Intent(manhinhchinh.this,transfers_money.class);
+            intent.putExtra("email",email);
+            startActivity(intent);
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
